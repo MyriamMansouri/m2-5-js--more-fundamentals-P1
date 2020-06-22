@@ -9,13 +9,25 @@
 //   - `typeof 3` returns 'number')
 
 function sumDigits(input) {
-  // Your code here
+  let sum = 0;
+  if (input.length === 2 && typeof input[0] === "number" && typeof input[0] === "number") {
+    sum =  input[0] + input[1];
+  } else {
+    sum = undefined;
+  }
+  return sum;
 }
 
 // Add 5 more test cases here! 7 total
 expect(sumDigits([2, 5]), 7);
 expect(sumDigits([-1, 0]), -1);
-
+expect(sumDigits([-1, 0, 5]), undefined);
+expect(sumDigits({ a: 1, b: 2}), undefined);
+expect(sumDigits(1, 2), undefined);
+expect(sumDigits(["tutu", "toto"]), undefined);
+expect(sumDigits('12'), undefined);
+expect(sumDigits(12), undefined);
+expect(sumDigits([]), undefined);
 /**
  * -------------------------------------------------------------------
  * ⚠️ No changes necessary below. ⚠️

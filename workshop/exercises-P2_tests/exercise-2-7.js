@@ -12,11 +12,32 @@
 // f(["foo", -1]) // ""
 
 function repeat(arr) {
-  // Your code here
+  if (!Array.isArray(arr)) {
+    return undefined;
+  }
+  if (typeof arr[0] != "string" || typeof arr[1] != "number") {
+    return undefined;
+  }
+  if (arr[1] < 1) {
+    return '';
+  }
+  let concat = '';
+  for (let i = 0 ; i < arr.length; i++) {
+    concat = concat.concat(arr[0]);
+  }
+
+  return concat;
 }
 
 // We need 7 test cases.
 // Don't forget to test all of the question parameters
+expect(repeat(['foo', 2]), 'foofoo');
+expect(repeat(['foo', 0]), '');
+expect(repeat([0, 0]), undefined);
+expect(repeat(['foo', 'foo']), undefined);
+expect(repeat(123), undefined);
+expect(repeat(['', 3]), '');
+expect(repeat(), undefined);
 
 /**
  * -------------------------------------------------------------------

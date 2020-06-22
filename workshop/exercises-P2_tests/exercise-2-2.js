@@ -8,7 +8,7 @@
 // - If it's a number, return `undefined`
 
 function lastCharacter(str) {
-  // Your code here
+  return str[str.length - 1];
 }
 
 // Step 2
@@ -16,6 +16,11 @@ function lastCharacter(str) {
 // conditions specified above (don't forget empty string and number!!)
 
 expect(lastCharacter('max'), 'x');
+expect(lastCharacter(''), undefined);
+expect(lastCharacter(2), undefined);
+expect(lastCharacter('a'), 'a');
+expect(lastCharacter('abc123'), '3');
+expect(lastCharacter('abc123 '), ' ');
 
 // Add 4 more test cases here!
 // 🌠 NOTE 🌠

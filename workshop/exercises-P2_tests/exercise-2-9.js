@@ -13,11 +13,21 @@
 //  - `forEach` might be helpful
 
 function longestWord(str) {
-  // Place solution here
+  if (typeof str != "string") {
+    return undefined;
+  }
+  let strToArray = str.split(' ');
+  let strLength = strToArray.map(el => el.length);
+  let max = strLength.lastIndexOf(Math.max(...strLength))
+  return strToArray[max]
 }
 
 // We need 5 test cases
-
+expect(longestWord("hello mom you are beautiful !"), "beautiful");
+expect(longestWord(123), undefined);
+expect(longestWord("hi you are"), "are");
+expect(longestWord(), undefined);
+expect(longestWord(''), '');
 /**
  * -------------------------------------------------------------------
  * ⚠️ No changes necessary below. ⚠️
